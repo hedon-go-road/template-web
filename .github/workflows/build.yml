@@ -60,10 +60,11 @@ jobs:
           token: ${{ secrets.CODECOV_TOKEN }}
           flags: unittests
           name: codecov-umbrella
-          fail_ci_if_error: true
+          fail_ci_if_error: false
+          continue_on_error: true
           verbose: true
-#      - name: Check test coverage
-#        run: bash ./scripts/ci/check_test_coverage.sh
+      # - name: Check test coverage
+      #   run: bash ./scripts/ci/check_test_coverage.sh
       - name: Get tags info
         id: get_tag_message
         run: git fetch origin +refs/tags/*:refs/tags/*

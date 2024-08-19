@@ -28,5 +28,8 @@ jobs:
         with:
           path: "assets/uml"
           message: "[skip] auto generate plant uml svgs"
+          fail_ci_if_error: false
+          continue_on_error: true
         env:
           GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+
